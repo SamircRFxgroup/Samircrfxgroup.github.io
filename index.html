@@ -32,14 +32,46 @@
             z-index: -1;
         }
 
-        /* نمایش لوگو */
-        .logo {
-            width: 120px; /* اندازه لوگو */
-            margin: 20px auto;
-            display: block;
+        /* حرکت دلار و یورو */
+        .currency {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            animation: moveCurrency 10s infinite linear;
         }
 
-        /* طراحی هدر */
+        .currency-dollar {
+            background: url('dollar-icon.png') no-repeat center center;
+            background-size: cover;
+            animation-delay: 0s;
+        }
+
+        .currency-euro {
+            background: url('euro-icon.png') no-repeat center center;
+            background-size: cover;
+            animation-delay: 5s;
+        }
+
+        @keyframes moveCurrency {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            25% {
+                transform: translate(-200%, -50%) rotate(90deg);
+            }
+            50% {
+                transform: translate(-50%, -200%) rotate(180deg);
+            }
+            75% {
+                transform: translate(200%, -50%) rotate(270deg);
+            }
+            100% {
+                transform: translate(-50%, 50%) rotate(360deg);
+            }
+        }
+
         header {
             padding: 50px 20px;
             background: rgba(255, 255, 255, 0.1);
@@ -55,7 +87,11 @@
             color: #00eaff;
         }
 
-        /* طراحی بخش‌ها */
+        header img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
         section {
             background: rgba(255, 255, 255, 0.1);
             margin: 20px auto;
@@ -77,7 +113,6 @@
             line-height: 1.6;
         }
 
-        /* لینک‌ها */
         a {
             color: #00eaff;
             text-decoration: none;
@@ -90,7 +125,6 @@
             text-decoration: underline;
         }
 
-        /* فوتر */
         footer {
             margin-top: 30px;
             padding: 20px 0;
@@ -119,21 +153,17 @@
     </style>
 </head>
 <body>
-
-    <!-- پس‌زمینه ذرات -->
     <div id="particles-js"></div>
 
-    <!-- نمایش لوگو -->
-    <div class="logo">
-        <img src="https://github.com/SamircRFxgroup/Samircrfxgroup.github.io/blob/7ad3135d93346d1537d5006da9d6750a3128e8b4/0A74E4DE-E41C-438B-AEA0-008004E7363D.jpeg?raw=true" alt="Samircrfxgroup Logo">
-    </div>
+    <!-- دلار و یورو متحرک -->
+    <div class="currency currency-dollar"></div>
+    <div class="currency currency-euro"></div>
 
-    <!-- هدر -->
     <header>
+        <img src="https://github.com/SamircRFxgroup/Samircrfxgroup.github.io/raw/7ad3135d93346d1537d5006da9d6750a3128e8b4/0A74E4DE-E41C-438B-AEA0-008004E7363D.jpeg" alt="Samircrfxgroup Logo">
         <h1>سامیرcrfxgroup</h1>
     </header>
 
-    <!-- بخش درباره ما -->
     <section>
         <h2>درباره ما</h2>
         <p>
@@ -142,7 +172,6 @@
         </p>
     </section>
 
-    <!-- بخش ارتباط با ما -->
     <section>
         <h2>ارتباط با ما</h2>
         <p>
@@ -161,7 +190,6 @@
         </p>
     </section>
 
-    <!-- بخش تماس با ادمین‌ها -->
     <section>
         <h2>تماس با ادمین‌ها</h2>
         <p>
@@ -176,13 +204,12 @@
         </p>
     </section>
 
-    <!-- فوتر -->
     <footer>
         <p>&copy; 2024 Samircrfxgroup. تمامی حقوق محفوظ است.</p>
     </footer>
 
-    <!-- تنظیمات particles.js -->
     <script>
+        /* تنظیمات particles.js */
         particlesJS("particles-js", {
             "particles": {
                 "number": {
@@ -230,13 +257,8 @@
                     "onclick": { "enable": true, "mode": "push" }
                 },
                 "modes": {
-                    "repulse": {
-                        "distance": 100,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    }
+                    "repulse": { "distance": 100, "duration": 0.4 },
+                    "push": { "particles_nb": 4 }
                 }
             },
             "retina_detect": true
