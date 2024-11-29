@@ -21,6 +21,7 @@
             overflow-x: hidden;
             height: 100vh;
             background: #141419;
+            position: relative;
         }
 
         /* پس‌زمینه ذرات */
@@ -29,6 +30,46 @@
             width: 100%;
             height: 100%;
             z-index: -1;
+        }
+
+        /* حرکت دلار و یورو */
+        .currency {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            animation: moveCurrency 10s infinite linear;
+        }
+
+        .currency-dollar {
+            background: url('dollar-icon.png') no-repeat center center;
+            background-size: cover;
+            animation-delay: 0s;
+        }
+
+        .currency-euro {
+            background: url('euro-icon.png') no-repeat center center;
+            background-size: cover;
+            animation-delay: 5s;
+        }
+
+        @keyframes moveCurrency {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            25% {
+                transform: translate(-200%, -50%) rotate(90deg);
+            }
+            50% {
+                transform: translate(-50%, -200%) rotate(180deg);
+            }
+            75% {
+                transform: translate(200%, -50%) rotate(270deg);
+            }
+            100% {
+                transform: translate(-50%, 50%) rotate(360deg);
+            }
         }
 
         header {
@@ -108,6 +149,10 @@
 </head>
 <body>
     <div id="particles-js"></div>
+
+    <!-- دلار و یورو متحرک -->
+    <div class="currency currency-dollar"></div>
+    <div class="currency currency-euro"></div>
 
     <header>
         <h1>سامیرcrfxgroup</h1>
