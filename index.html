@@ -4,84 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samircrfxgroup</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
-        /* طراحی کلی */
-        body {
-            font-family: 'Arial', sans-serif;
+        /* تنظیمات کلی */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
             direction: rtl;
             text-align: center;
-            background: linear-gradient(135deg, #1e1e2f, #141419);
             color: white;
             overflow-x: hidden;
         }
 
+        /* پس‌زمینه ذرات */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
         header {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            position: relative;
-            z-index: 10;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         header h1 {
-            font-size: 2.5rem;
-            margin: 0;
+            font-size: 3rem;
             color: #00eaff;
         }
 
         section {
-            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px auto;
             padding: 20px;
-            position: relative;
-            width: 80%;
-            max-width: 800px;
             border-radius: 15px;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* انیمیشن نورهای متحرک */
-        section::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff);
-            z-index: -1;
-            background-size: 400% 400%;
-            animation: glowing 8s linear infinite;
-            border-radius: 18px;
+        section h2 {
+            font-size: 2rem;
+            color: #00eaff;
+            margin-bottom: 15px;
         }
 
-        @keyframes glowing {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        section::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: #000;
-            z-index: -2;
-            border-radius: 18px;
+        section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
         }
 
         a {
             color: #00eaff;
             text-decoration: none;
             font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         a:hover {
@@ -91,8 +79,15 @@
 
         footer {
             margin-top: 30px;
-            padding: 10px 0;
-            background: rgba(0, 0, 0, 0.9);
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
             color: #ccc;
             font-size: 0.9rem;
         }
@@ -103,16 +98,17 @@
                 font-size: 2rem;
             }
 
-            section {
-                width: 90%;
-                margin: 20px auto;
+            section h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
+
     <header>
-        <h1>SamircRFxgroup</h1>
+        <h1>سامیرcrfxgroup</h1>
     </header>
 
     <section>
@@ -144,16 +140,76 @@
     <section>
         <h2>تماس با ادمین‌ها</h2>
         <p>
-              (ادمین کلاپ میلیونر ها):
+            ادمین ۱ (برای خدمات به دانش‌آموزان):
             <br>
             <a href="https://t.me/cRFxfamily" target="_blank">ارتباط با ادمین ۱</a>
         </p>
         <p>
-             (عضویت در کانال VIP👑 رایگان):
+            ادمین ۲ (برای عضویت در کانال سیگنال VIP):
             <br>
             <a href="https://t.me/Samircrfx_signal" target="_blank">ارتباط با ادمین ۲</a>
         </p>
     </section>
 
+    <footer>
+        <p>&copy; 2024 Samircrfxgroup. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        /* تنظیمات particles.js */
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": { "value": "#ffffff" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" },
+                    "polygon": { "nb_sides": 5 }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": { "enable": false }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 4,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "repulse": { "distance": 100, "duration": 0.4 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
