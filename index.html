@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samircrfxgroup Website</title>
+    <title>سامیر کر اف ایکس</title>
     <style>
-        /* Basic Reset */
+        /* تنظیمات اولیه */
         body, html {
             margin: 0;
             padding: 0;
@@ -14,13 +14,14 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Background Styling */
+        /* پس زمینه */
         body {
             background: #000;
             position: relative;
             color: white;
         }
 
+        /* انیمیشن پس‌زمینه */
         .animation {
             position: fixed;
             top: 0;
@@ -33,7 +34,7 @@
 
         .animation img {
             position: absolute;
-            width: 50px;
+            width: 60px;
             height: auto;
             opacity: 0.8;
             animation: float 10s infinite linear;
@@ -50,28 +51,41 @@
             }
         }
 
-        /* Adjust Animation for Mobile and Desktop */
+        /* تنظیم انیمیشن برای موبایل و دسکتاپ */
         @media screen and (max-width: 768px) {
             .animation img {
-                width: 30px;
+                width: 40px;
             }
         }
 
-        /* Central Logo */
+        /* استایل لوگو */
         .logo {
             position: relative;
             top: 50%;
             transform: translateY(-50%);
             text-align: center;
-            font-size: 40px;
+            font-size: 60px;
             color: #ffd700;
             text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00, 0 0 30px #ff4500;
+            animation: logo-float 3s ease-in-out infinite;
         }
 
-        /* Contact Section */
+        @keyframes logo-float {
+            0% {
+                transform: translateY(-50%) scale(1);
+            }
+            50% {
+                transform: translateY(-40%) scale(1.1);
+            }
+            100% {
+                transform: translateY(-50%) scale(1);
+            }
+        }
+
+        /* بخش تماس */
         .contact {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             text-align: center;
@@ -80,28 +94,37 @@
         .contact a {
             color: #ffd700;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-size: 18px;
+            transition: all 0.3s ease;
         }
+
+        .contact a:hover {
+            text-shadow: 0 0 20px #ff4500, 0 0 30px #ff8c00;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="animation">
+        <!-- تصویر دلار و یورو با انیمیشن -->
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/US_$50_obverse_series_2004.jpg" style="left: 10%; animation-duration: 15s;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Euro_20_banknote_obverse_%282013%29.jpg" style="left: 50%; animation-duration: 20s;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/US_%241_obverse_series_2009.jpg" style="left: 80%; animation-duration: 12s;">
     </div>
 
     <div class="logo">
-        Samircrfxgroup
+        <!-- لوگوی شما -->
+        <img src="https://your-logo-image-link.com/logo.png" alt="سامیر کر اف ایکس" style="width: 150px; height: auto;">
     </div>
 
     <div class="contact">
         <p>
-            <a href="https://www.instagram.com/samircrfxgroup/profilecard/?igsh=MmFzYnNlMTY3YW4z" target="_blank">Instagram</a>
-            <a href="https://t.me/milionersho_cRFx" target="_blank">Telegram Channel</a>
-            <a href="https://t.me/cRFxfamily" target="_blank">Admin 1</a>
-            <a href="https://t.me/Samircrfx_signal" target="_blank">Admin 2</a>
+            <a href="https://www.instagram.com/samircrfxgroup/profilecard/?igsh=MmFzYnNlMTY3YW4z" target="_blank">اینستاگرام</a>
+            <a href="https://t.me/milionersho_cRFx" target="_blank">کانال تلگرام</a>
+            <a href="https://t.me/cRFxfamily" target="_blank">ادمین ۱</a>
+            <a href="https://t.me/Samircrfx_signal" target="_blank">ادمین ۲</a>
         </p>
     </div>
 
