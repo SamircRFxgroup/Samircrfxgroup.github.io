@@ -3,130 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سامیر کر اف ایکس</title>
+    <title>Samircrfxgroup</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <style>
-        /* تنظیمات اولیه */
-        body, html {
+        /* تنظیمات کلی */
+        * {
             margin: 0;
             padding: 0;
-            overflow: hidden;
-            height: 100%;
-            font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
 
-        /* پس زمینه */
         body {
-            background: #000;
-            position: relative;
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: center;
             color: white;
+            overflow-x: hidden;
+            height: 100vh;
+            background: #141419;
+            position: relative;
         }
 
-        /* انیمیشن پس‌زمینه */
-        .animation {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* پس‌زمینه ذرات */
+        #particles-js {
+            position: absolute;
             width: 100%;
             height: 100%;
             z-index: -1;
-            overflow: hidden;
         }
 
-        .animation img {
+        /* حرکت دلار و یورو */
+        .currency {
             position: absolute;
-            width: 60px;
-            height: auto;
-            opacity: 0.8;
-            animation: float 10s infinite linear;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* تنظیم انیمیشن برای موبایل و دسکتاپ */
-        @media screen and (max-width: 768px) {
-            .animation img {
-                width: 40px;
-            }
-        }
-
-        /* استایل لوگو */
-        .logo {
-            position: relative;
             top: 50%;
-            transform: translateY(-50%);
-            text-align: center;
-            font-size: 60px;
-            color: #ffd700;
-            text-shadow: 0 0 10px #ffd700, 0 0 20px #ff8c00, 0 0 30px #ff4500;
-            animation: logo-float 3s ease-in-out infinite;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            animation: moveCurrency 10s infinite linear;
         }
 
-        @keyframes logo-float {
+        .currency-dollar {
+            background: url('dollar-icon.png') no-repeat center center;
+            background-size: cover;
+            animation-delay: 0s;
+        }
+
+        .currency-euro {
+            background: url('euro-icon.png') no-repeat center center;
+            background-size: cover;
+            animation-delay: 5s;
+        }
+
+        @keyframes moveCurrency {
             0% {
-                transform: translateY(-50%) scale(1);
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            25% {
+                transform: translate(-200%, -50%) rotate(90deg);
             }
             50% {
-                transform: translateY(-40%) scale(1.1);
+                transform: translate(-50%, -200%) rotate(180deg);
+            }
+            75% {
+                transform: translate(200%, -50%) rotate(270deg);
             }
             100% {
-                transform: translateY(-50%) scale(1);
+                transform: translate(-50%, 50%) rotate(360deg);
             }
         }
 
-        /* بخش تماس */
-        .contact {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
+        header {
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .contact a {
-            color: #ffd700;
+        header h1 {
+            font-size: 3rem;
+            color: #00eaff;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 800px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #00eaff;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #00eaff;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
+            font-weight: bold;
             transition: all 0.3s ease;
         }
 
-        .contact a:hover {
-            text-shadow: 0 0 20px #ff4500, 0 0 30px #ff8c00;
+        a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
         }
 
+        footer {
+            margin-top: 30px;
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        /* واکنش‌گرایی */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
 
-    <div class="animation">
-        <!-- تصویر دلار و یورو با انیمیشن -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/US_$50_obverse_series_2004.jpg" style="left: 10%; animation-duration: 15s;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ac/Euro_20_banknote_obverse_%282013%29.jpg" style="left: 50%; animation-duration: 20s;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/US_%241_obverse_series_2009.jpg" style="left: 80%; animation-duration: 12s;">
-    </div>
+    <!-- دلار و یورو متحرک -->
+    <div class="currency currency-dollar"></div>
+    <div class="currency currency-euro"></div>
 
-    <div class="logo">
-        <!-- لوگوی شما -->
-        <img src="https://your-logo-image-link.com/logo.png" alt="سامیر کر اف ایکس" style="width: 150px; height: auto;">
-    </div>
+    <header>
+        <h1>سامیرcrfxgroup</h1>
+    </header>
 
-    <div class="contact">
+    <section>
+        <h2>درباره ما</h2>
         <p>
-            <a href="https://www.instagram.com/samircrfxgroup/profilecard/?igsh=MmFzYnNlMTY3YW4z" target="_blank">اینستاگرام</a>
-            <a href="https://t.me/milionersho_cRFx" target="_blank">کانال تلگرام</a>
-            <a href="https://t.me/cRFxfamily" target="_blank">ادمین ۱</a>
-            <a href="https://t.me/Samircrfx_signal" target="_blank">ادمین ۲</a>
+            به وب‌سایت رسمی Samircrfxgroup خوش آمدید! ما در زمینه بازارهای مالی فعالیت داریم
+            و خدمات آموزشی و سیگنال VIP ارائه می‌کنیم. هدف ما موفقیت شما در بازارهای مالی است.
         </p>
-    </div>
+    </section>
 
+    <section>
+        <h2>ارتباط با ما</h2>
+        <p>
+            دنبال کردن ما در اینستاگرام:
+            <br>
+            <a href="https://www.instagram.com/samircrfxgroup/profilecard/?igsh=MmFzYnNlMTY3YW4z" target="_blank">
+                پیج اینستاگرام
+            </a>
+        </p>
+        <p>
+            عضویت در کانال تلگرام:
+            <br>
+            <a href="https://t.me/milionersho_cRFx" target="_blank">
+                کانال تلگرام
+            </a>
+        </p>
+    </section>
+
+    <section>
+        <h2>تماس با ادمین‌ها</h2>
+        <p>
+            ادمین ۱ (برای خدمات به دانش‌آموزان):
+            <br>
+            <a href="https://t.me/cRFxfamily" target="_blank">ارتباط با ادمین ۱</a>
+        </p>
+        <p>
+            ادمین ۲ (برای عضویت در کانال سیگنال VIP):
+            <br>
+            <a href="https://t.me/Samircrfx_signal" target="_blank">ارتباط با ادمین ۲</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Samircrfxgroup. تمامی حقوق محفوظ است.</p>
+    </footer>
+
+    <script>
+        /* تنظیمات particles.js */
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": { "value": "#ffffff" },
+                "shape": {
+                    "type": "circle",
+                    "stroke": { "width": 0, "color": "#000000" },
+                    "polygon": { "nb_sides": 5 }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": { "enable": false }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 4,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out"
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "repulse" },
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": {
+                    "repulse": { "distance": 100, "duration": 0.4 },
+                    "push": { "particles_nb": 4 }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
-</html>
+</html> 
+این بهترین بود
