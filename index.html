@@ -12,57 +12,100 @@
             padding: 0;
             direction: rtl;
             text-align: center;
+            background: linear-gradient(135deg, #1e1e2f, #141419);
             color: white;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://source.unsplash.com/1600x900/?finance,technology') no-repeat center center fixed;
-            background-size: cover;
+            overflow-x: hidden;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.8);
             padding: 20px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         header h1 {
             font-size: 2.5rem;
             margin: 0;
+            color: #00eaff;
         }
 
         section {
-            margin: 20px;
+            margin: 40px auto;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
+            position: relative;
+            width: 80%;
+            max-width: 800px;
             border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        /* انیمیشن نورهای متحرک */
+        section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff);
+            z-index: -1;
+            background-size: 400% 400%;
+            animation: glowing 8s linear infinite;
+            border-radius: 18px;
+        }
+
+        @keyframes glowing {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: #000;
+            z-index: -2;
+            border-radius: 18px;
         }
 
         a {
-            color: #00bcd4;
+            color: #00eaff;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
             margin-top: 10px;
+            transition: color 0.3s ease;
         }
 
         a:hover {
+            color: #ff00ff;
             text-decoration: underline;
         }
 
         footer {
             margin-top: 30px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.9);
             color: #ccc;
+            font-size: 0.9rem;
         }
 
-        /* طراحی واکنش‌گرا */
+        /* واکنش‌گرایی */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             section {
-                margin: 10px;
-                padding: 15px;
+                width: 90%;
+                margin: 20px auto;
             }
         }
     </style>
@@ -101,19 +144,16 @@
     <section>
         <h2>تماس با ادمین‌ها</h2>
         <p>
-            ادمین ۱ (برای خدمات به دانش‌آموزان):
+             (برای خدمات به دانش‌آموزان):
             <br>
             <a href="https://t.me/cRFxfamily" target="_blank">ارتباط با ادمین ۱</a>
         </p>
         <p>
-            ادمین ۲ (برای عضویت در کانال VIP👑 رایگان):
+             (برای عضویت در کانال سیگنال VIP):
             <br>
             <a href="https://t.me/Samircrfx_signal" target="_blank">ارتباط با ادمین ۲</a>
         </p>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Samircrfxgroup. تمامی حقوق محفوظ است.</p>
-    </footer>
 </body>
 </html>
