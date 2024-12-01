@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samircrfxgroup</title>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <title>SamircRFxgroup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Vazir&display=swap" rel="stylesheet">
     <style>
-        /* تنظیمات کلی */
         * {
             margin: 0;
             padding: 0;
@@ -14,271 +13,395 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            direction: rtl;
-            text-align: center;
-            color: white;
+            font-family: 'Vazir', sans-serif;
+            background-color: #121212;
+            color: #fff;
             overflow-x: hidden;
-            height: 100vh;
-            background: #141419;
-            position: relative;
-        }
-
-        /* پس‌زمینه ذرات */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        /* حرکت دلار و یورو */
-        .currency {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 80px;
-            height: 80px;
-            animation: moveCurrency 10s infinite linear;
-        }
-
-        .currency-dollar {
-            background: url('dollar-icon.png') no-repeat center center;
-            background-size: cover;
-            animation-delay: 0s;
-        }
-
-        .currency-euro {
-            background: url('euro-icon.png') no-repeat center center;
-            background-size: cover;
-            animation-delay: 5s;
-        }
-
-        @keyframes moveCurrency {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            25% {
-                transform: translate(-200%, -50%) rotate(90deg);
-            }
-            50% {
-                transform: translate(-50%, -200%) rotate(180deg);
-            }
-            75% {
-                transform: translate(200%, -50%) rotate(270deg);
-            }
-            100% {
-                transform: translate(-50%, 50%) rotate(360deg);
-            }
         }
 
         header {
-            padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 800px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        header h1 {
-            font-size: 3rem;
-            color: #00eaff;
-        }
-
-        header img {
-            max-width: 150px;
-            margin-bottom: 20px;
-        }
-
-        section {
-            background: rgba(255, 255, 255, 0.1);
-            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            border-radius: 15px;
-            max-width: 800px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background-color: #1a1a1a;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        section h2 {
-            font-size: 2rem;
-            color: #00eaff;
-            margin-bottom: 15px;
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
         }
 
-        section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+        nav ul li {
+            position: relative;
         }
 
-        a {
-            color: #00eaff;
+        nav ul li a {
             text-decoration: none;
+            color: #fff;
+            font-size: 16px;
             font-weight: bold;
-            transition: all 0.3s ease;
+            padding: 12px 25px;
+            background-color: #007f7f;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        a:hover {
-            color: #ff00ff;
-            text-decoration: underline;
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            transform: translateY(-5px);
+        }
+
+        .btn-hover-animate {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #ffcc00;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover .btn-hover-animate {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .hero {
+            position: relative;
+            height: 90vh;
+            background: url('https://yourchartanimationlink.com') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            background: #1a1a1a;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .section:hover {
+            background: #00ffcc;
+        }
+
+        .section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .section ul {
+            list-style: none;
+        }
+
+        .section ul li a {
+            color: #fff;
+            font-size: 20px;
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .section ul li a:hover {
+            color: #ffcc00;
         }
 
         footer {
-            margin-top: 30px;
-            padding: 20px 0;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            max-width: 800px;
-            margin: 20px auto;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         footer p {
-            color: #ccc;
-            font-size: 0.9rem;
+            font-size: 18px;
+            color: #fff;
         }
 
-        /* واکنش‌گرایی */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
+        footer a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-            section h2 {
-                font-size: 1.5rem;
+        footer a:hover {
+            color: #ffcc00;
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://yourchartanimationlink.com') repeat;
+            animation: moveBackground 30s linear infinite;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
             }
         }
+
+        .fadeInUp {
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Admin Box Styles */
+        .admin-boxes {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .admin-box {
+            background-color: #5f6368;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .admin-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .admin-box h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .admin-box p {
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .admin-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007f7f;
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .admin-btn:hover {
+            background-color: #ffcc00;
+            transform: translateY(-3px);
+        }
+
+        /* Programs Section */
+        .programs-section {
+            padding: 80px 20px;
+            text-align: center;
+            background: #1a1a1a;
+        }
+
+        .programs-section h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .programs-section .programs-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .programs-section .programs-row .program-box {
+            background-color: #3b5c5c;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            width: 180px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .programs-section .programs-row .program-box:hover {
+            background-color: #ffcc00;
+            transform: translateY(-5px);
+        }
+
+        .programs-section .programs-row .program-box a {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .programs-section ul {
+            list-style: none;
+            margin-top: 30px;
+            padding: 0;
+            text-align: center;
+        }
+
+        .programs-section ul li a {
+            color: #fff;
+            font-size: 20px;
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .programs-section ul li a:hover {
+            color: #ffcc00;
+        }
+
     </style>
 </head>
 <body>
-    <div id="particles-js"></div>
-
-    <!-- دلار و یورو متحرک -->
-    <div class="currency currency-dollar"></div>
-    <div class="currency currency-euro"></div>
 
     <header>
-        <img src="https://github.com/SamircRFxgroup/Samircrfxgroup.github.io/raw/7ad3135d93346d1537d5006da9d6750a3128e8b4/0A74E4DE-E41C-438B-AEA0-008004E7363D.jpeg" alt="Samircrfxgroup Logo">
-        <h1>سامیرcrfxgroup</h1>
+        <nav>
+            <ul>
+                <li><a href="#contact">تماس با ما <span class="btn-hover-animate"></span></a></li>
+                <li><a href="#about">درباره من <span class="btn-hover-animate"></span></a></li>
+                <li><a href="#services">خدمات <span class="btn-hover-animate"></span></a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section>
-        <h2>درباره ما</h2>
-        <p>
-            به وب‌سایت رسمی Samircrfxgroup خوش آمدید! ما در زمینه بازارهای مالی فعالیت داریم
-            و خدمات آموزشی و سیگنال VIP ارائه می‌کنیم. هدف ما موفقیت شما در بازارهای مالی است.
-        </p>
+    <section class="hero fadeInUp">
+        <h2>به دنیای ترید در بازار فارکس خوش آمدید</h2>
     </section>
 
-    <section>
-        <h2>ارتباط با ما</h2>
-        <p>
-            دنبال کردن ما در اینستاگرام:
-            <br>
-            <a href="https://www.instagram.com/samircrfxgroup/profilecard/?igsh=MmFzYnNlMTY3YW4z" target="_blank">
-                پیج اینستاگرام
-            </a>
-        </p>
-        <p>
-            عضویت در کانال تلگرام:
-            <br>
-            <a href="https://t.me/milionersho_cRFx" target="_blank">
-                کانال تلگرام
-            </a>
-        </p>
+    <section class="programs-section fadeInUp">
+        <h2>برنامه‌ها و شبکه‌های اجتماعی</h2>
+        <div class="programs-row">
+            <div class="program-box">
+                <a href="https://www.instagram.com/samircrfxgroup/" target="_blank">اینستاگرام</a>
+            </div>
+            <div class="program-box">
+                <a href="https://www.tiktok.com/@samircrfxgroup?_t=ZS-8roeKSmsiAe&_r=1" target="_blank">تیک تاک</a>
+            </div>
+            <div class="program-box">
+                <a href="https://www.youtube.com/channel/UCsHwaUu4mH5QUx0NckQ0h6g" target="_blank">یوتیوب</a>
+            </div>
+            <div class="program-box">
+                <a href="https://t.me/cRFxfamily" target="_blank">کانال تلگرام</a>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>تماس با ادمین‌ها</h2>
-        <p>
-            ادمین ۱ (برای خدمات به دانش‌آموزان):
-            <br>
-            <a href="https://t.me/cRFxfamily" target="_blank">ارتباط با ادمین ۱</a>
-        </p>
-        <p>
-            ادمین ۲ (برای عضویت در کانال سیگنال VIP):
-            <br>
-            <a href="https://t.me/Samircrfx_signal" target="_blank">ارتباط با ادمین ۲</a>
-        </p>
+    <section class="admin-boxes fadeInUp">
+        <div class="admin-box">
+            <h3>ادمین خدمات</h3>
+            <p>برای ارتباط با پشتیبانی و دریافت اطلاعات بیشتر از خدمات ما، به ادمین پیام بدهید.</p>
+            <a href="https://t.me/cRFxfamily" class="admin-btn">پیام به ادمین</a>
+        </div>
+        <div class="admin-box">
+            <h3>ادمین VIP</h3>
+            <p>برای دریافت سیگنال‌های VIP رایگان، به ادمین پیام بدهید.</p>
+            <a href="https://t.me/Samircrfx_signal" class="admin-btn">پیام به ادمین</a>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Samircrfxgroup. تمامی حقوق محفوظ است.</p>
+        <p>&copy; 2024 Samir cRFxgroup | همه حقوق محفوظ است</p>
     </footer>
 
+    <div class="background-animation"></div>
+
     <script>
-        /* تنظیمات particles.js */
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 100,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": { "value": "#ffffff" },
-                "shape": {
-                    "type": "circle",
-                    "stroke": { "width": 0, "color": "#000000" },
-                    "polygon": { "nb_sides": 5 }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": { "enable": false }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": { "enable": true, "speed": 4, "size_min": 0.1 }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.5,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 3,
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false
-                    }
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.fadeInUp');
+            const triggerBottom = window.innerHeight / 5 * 4;
+
+            sections.forEach(function(section) {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < triggerBottom) {
+                    section.classList.add('show');
+                } else {
+                    section.classList.remove('show');
                 }
-            },
-            "interactivity": {
-                "detect_on": "window",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    }
-                },
-                "modes": {
-                    "repulse": {
-                        "distance": 100,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    }
-                }
-            },
-            "retina_detect": true
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const chartBackground = document.querySelector('.background-animation');
+            if (chartBackground) {
+                chartBackground.style.animation = "moveBackground 30s linear infinite";
+            }
+        });
+
+        const buttons = document.querySelectorAll('.admin-btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                button.style.transform = 'translateY(-3px)';
+            });
+            button.addEventListener('mouseleave', function() {
+                button.style.transform = 'translateY(0)';
+            });
+        });
+
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                link.style.transform = 'scale(1.05)';
+            });
+            link.addEventListener('mouseleave', function() {
+                link.style.transform = 'scale(1)';
+            });
         });
     </script>
+
 </body>
 </html>
