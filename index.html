@@ -41,19 +41,23 @@
         nav ul li a {
             text-decoration: none;
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;  /* کاهش اندازه فونت */
             font-weight: bold;
-            padding: 12px 25px;
+            padding: 8px 18px;  /* کاهش padding برای فضای بیشتر */
             background-color: #007f7f;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        nav ul li a:hover {
-            background-color: #ffcc00;
-            transform: translateY(-5px);
+    
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            flex-wrap: wrap;  /* اضافه شدن برای جلوگیری از overflow */
+            justify-content: center;
         }
+
 
         .btn-hover-animate {
             position: absolute;
@@ -305,6 +309,33 @@
             color: #ffcc00;
         }
 
+        /* About Me Box */
+        .about-box {
+            background-color: #444;
+            padding: 40px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            color: #fff;
+        }
+
+        .about-box h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-box p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .about-box .highlight {
+            color: #ffcc00;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -312,18 +343,18 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#contact">تماس با ما <span class="btn-hover-animate"></span></a></li>
-                <li><a href="#about">درباره من <span class="btn-hover-animate"></span></a></li>
-                <li><a href="#services">خدمات <span class="btn-hover-animate"></span></a></li>
+                <li><a href="#about" id="about-link">درباره من</a><div class="btn-hover-animate"></div></li>
+                <li><a href="#programs">برنامه‌ها</a><div class="btn-hover-animate"></div></li>
+                <li><a href="#admins">ادمین‌ها</a><div class="btn-hover-animate"></div></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero fadeInUp">
+    <section class="hero">
         <h2>به دنیای ترید در بازار فارکس خوش آمدید</h2>
     </section>
 
-    <section class="programs-section fadeInUp">
+    <section id="programs" class="programs-section fadeInUp">
         <h2>برنامه‌ها و شبکه‌های اجتماعی</h2>
         <div class="programs-row">
             <div class="program-box">
@@ -336,31 +367,41 @@
                 <a href="https://www.youtube.com/channel/UCsHwaUu4mH5QUx0NckQ0h6g" target="_blank">یوتیوب</a>
             </div>
             <div class="program-box">
-                <a href="https://t.me/milionersho_cRFx" target="_blank">کانال تلگرام</a>
+                <a href="https://t.me/cRFxfamily" target="_blank">کانال تلگرام</a>
             </div>
         </div>
     </section>
 
-    <section class="admin-boxes fadeInUp">
+    <section id="admins" class="admin-boxes fadeInUp">
         <div class="admin-box">
             <h3>ادمین خدمات</h3>
             <p>برای ارتباط با پشتیبانی و دریافت اطلاعات بیشتر از خدمات ما، به ادمین پیام بدهید.</p>
             <a href="https://t.me/cRFxfamily" class="admin-btn">پیام به ادمین</a>
         </div>
         <div class="admin-box">
-            <h3>👑VIP ادمین</h3>
+            <h3>ادمین VIP</h3>
             <p>برای دریافت سیگنال‌های VIP رایگان، به ادمین پیام بدهید.</p>
             <a href="https://t.me/Samircrfx_signal" class="admin-btn">پیام به ادمین</a>
         </div>
     </section>
 
+    <section id="about" class="about-box fadeInUp">
+        <h3>درباره من</h3>
+        <p>به وب‌سایت رسمی ما خوش آمدید! ما بیش از ۵ سال است در زمینه معاملگری در بازارهای مالی فعالیت داریم و خدمات آموزش رایگان و سیگنال VIP رایگان را به شما عزیزان ارائه می‌کنیم. هدف ما موفقیت شما در بازارهای مالی است.</p>
+        <p class="highlight">💎ثروت در دستان شما خواهد بود💎</p>
+    </section>
+
     <footer>
-        <p>&copy; SamircRFxgroup  </p>
+        <p>&copy; 2024 Samir cRFxgroup | همه حقوق محفوظ است</p>
     </footer>
 
     <div class="background-animation"></div>
 
     <script>
+        document.getElementById('about-link').addEventListener('click', function() {
+            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+        });
+
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('.fadeInUp');
             const triggerBottom = window.innerHeight / 5 * 4;
